@@ -27,6 +27,8 @@ module Xcprofiler
           executions.sort { |a, b| [b.time, (a.filename or ''), (a.line or 0)] <=> [a.time, (b.filename or ''), (b.line or 0)] }
         when :file
           executions.sort { |a, b| [(a.filename or ''), (a.line or 0)] <=> [(b.filename or ''), (b.line or 0)] }
+        when :absolute_path
+          executions.sort { |a, b| [(a.absolute_path or ''), (a.line or 0)] <=> [(b.absolute_path or ''), (b.line or 0)] }
       end
     end
 

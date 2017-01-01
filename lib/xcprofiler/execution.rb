@@ -43,6 +43,14 @@ module Xcprofiler
       end
     end
 
+    def absolute_path
+      if path
+        File.absolute_path(path)
+      else
+        nil
+      end
+    end
+
     def column
       if @position
         @position.column
